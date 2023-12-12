@@ -1,12 +1,28 @@
-﻿<Window x:Class="project_pacman.MainWindow"
+﻿<Window x:Class="Project.MainWindow"
+        Closing="MainWindow_Closing"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:project_pacman"
+        xmlns:local="clr-namespace:Project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Pacman Game" Height="450" Width="800">
+    <Grid Margin="0,0,587,295">
 
+        <!-- Buttons voor bediening -->
+        <Button Content="Start Game" Click="StartGame_Click" Margin="10,70,97,1"/>
+        <Button Content="Left" Click="Left_Click" Margin="10,154,108,-86"/>
+        <Button Content="Right" Click="Right_Click" Margin="110,154,8,-86"/>
+        <Button Content="Up" Click="Up_Click" Margin="10,230,108,-162"/>
+        <Button Content="Down" Click="Down_Click" Margin="110,230,8,-162"/>
+
+        <!-- Canvas voor het spel -->
+        <Canvas Name="gameCanvas" Width="400" Height="400" Background="Black" Focusable="True"  Margin="213,0,-400,-261"/>
+
+        <!-- Labels voor score en level -->
+        <Label Content="Score:" HorizontalAlignment="Left" Margin="7,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="scoreLabel" Content="0" HorizontalAlignment="Left" Margin="60,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Level:" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="levelLabel" Content="1" HorizontalAlignment="Left" Margin="60,40,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
